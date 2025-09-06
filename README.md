@@ -26,19 +26,19 @@ The system:
 ```
 
 hallucination-detector/
-└── streamlit\_app/             # main app code
+└── streamlit_app/             # main app code
 ├── app.py                 # Streamlit UI
 ├── retriever.py           # retrieval pipeline
 ├── verifier.py            # embedding-based verification
-├── llm\_client.py          # LLM interface (OpenAI)
-├── gnn\_loader.py          # optional GNN model integration
+├── llm_client.py          # LLM interface (OpenAI)
+├── gnn_loader.py          # optional GNN model integration
 ├── requirements.txt       # dependencies
 ├── README.md              # project documentation
 ├── .env                   # environment variables (ignored by git)
 │
 ├── data/                  # datasets & retrieval files
-│   ├── retrieval\_results.json
-│   ├── hotpot\_clean.jsonl
+│   ├── retrieval_results.json
+│   ├── hotpot_clean.jsonl
 │   └── README.md
 │
 ├── models/                # trained GNN model weights
