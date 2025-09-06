@@ -21,36 +21,74 @@ The system:
 
 ---
 
+hallucination-detector/
+│
+├── streamlit_app/          # main app code
+│   ├── app.py
+│   ├── retriever.py
+│   ├── verifier.py
+│   ├── llm_client.py
+│   ├── gnn_loader.py
+│   ├── requirements.txt
+│   ├── .env (ignored by git)
+│   ├── README.md
+│   ├── data/               # datasets & retrieval files
+│   │   ├── retrieval_results.json
+│   │   ├── hotpot_clean.jsonl
+│   │   └── README.md
+│   ├── models/             # trained GNN model weights
+│   │   └── README.md     
+│   └── .streamlit/         # Streamlit config
+│       └── config.toml
+│
+└── .gitignore
+
+
+
 ## 🛠 Setup
 
-### 1. Clone the repo
-
+### 1. Clone the repository
+```bash
 git clone https://github.com/FalconAI007/hallucination-detector.git
 cd hallucination-detector/streamlit_app
+````
 
+### 2. Create a virtual environment
 
-2. Create a virtual environment
-
+```bash
 python -m venv .venv
 .venv\Scripts\activate   # On Windows
+```
 
+### 3. Install dependencies
 
-3. Install dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
+### 4. Configure environment
 
-4. Configure environment
+Create a file named `.env` inside `streamlit_app/` and add:
 
-Create a .env file in streamlit_app/:
-
+```env
 OPENAI_API_KEY=your_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 TOP_K=5
+```
 
+### 5. Prepare folders
 
-5. Run the app
+Make sure these folders exist (some may already be created):
 
+```
+streamlit_app/data/    -> for datasets like retrieval_results.json, hotpot_clean.jsonl
+streamlit_app/models/  -> for GNN weights or other trained models
+```
+
+### 6. Run the app
+
+```bash
 streamlit run app.py
+```
 
-Open http://localhost:8501 in your browser.
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
