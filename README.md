@@ -21,29 +21,33 @@ The system:
 
 ---
 
+## 📂 Project Structure
+
+```
+
 hallucination-detector/
+└── streamlit\_app/             # main app code
+├── app.py                 # Streamlit UI
+├── retriever.py           # retrieval pipeline
+├── verifier.py            # embedding-based verification
+├── llm\_client.py          # LLM interface (OpenAI)
+├── gnn\_loader.py          # optional GNN model integration
+├── requirements.txt       # dependencies
+├── README.md              # project documentation
+├── .env                   # environment variables (ignored by git)
 │
-├── streamlit_app/          # main app code
-│   ├── app.py
-│   ├── retriever.py
-│   ├── verifier.py
-│   ├── llm_client.py
-│   ├── gnn_loader.py
-│   ├── requirements.txt
-│   ├── .env (ignored by git)
-│   ├── README.md
-│   ├── data/               # datasets & retrieval files
-│   │   ├── retrieval_results.json
-│   │   ├── hotpot_clean.jsonl
-│   │   └── README.md
-│   ├── models/             # trained GNN model weights
-│   │   └── README.md     
-│   └── .streamlit/         # Streamlit config
-│       └── config.toml
+├── data/                  # datasets & retrieval files
+│   ├── retrieval\_results.json
+│   ├── hotpot\_clean.jsonl
+│   └── README.md
 │
-└── .gitignore
+├── models/                # trained GNN model weights
+│   └── README.md
+│
+└── .streamlit/            # Streamlit configuration
+└── config.toml
 
-
+```
 
 ## 🛠 Setup
 
